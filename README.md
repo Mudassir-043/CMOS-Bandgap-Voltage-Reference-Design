@@ -10,8 +10,10 @@
 ## Please fill in your project documentation in this README.md file 
 
 
-Self Interference Cancellation Low Noise Amplifier 
-Gain greater than 20 dB 
-Self interference Cancellation greater than 20 dB 
-Noise Figure less than 4 dB 
-Area is around 0.1 mm square
+A 2nd order Band Gap Refernece circuit 
+implemneted in sky130B
+Tools used:
+XSchem, Magic, Netgen, Klayout
+Voltage varaition achived: 3 ppm
+volatge vartion 1st stage: 5 ppm
+volateg variation both stages: 3 ppm
