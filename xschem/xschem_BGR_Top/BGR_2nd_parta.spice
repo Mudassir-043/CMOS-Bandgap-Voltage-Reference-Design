@@ -1,0 +1,23 @@
+** sch_path: /home/shahid/Desktop/EDA/test/xschem BGR/BGR_2nd_parta.sch
+**.subckt BGR_2nd_parta VDD VSS V V4
+*.iopin VDD
+*.iopin VSS
+*.iopin V
+*.iopin V4
+XQ16 VSS VSS net4 sky130_fd_pr__pnp_05v5_W3p40L3p40
+XM30 V4 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=24 nf=3 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM31 net1 V VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM32 net1 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XR6 net2 V4 VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+XR7 net3 net2 VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+XR9 net4 net3 VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+XR1 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+XR2 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+**.ends
+.end

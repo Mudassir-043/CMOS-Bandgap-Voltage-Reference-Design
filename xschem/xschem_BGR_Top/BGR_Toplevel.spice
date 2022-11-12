@@ -1,0 +1,258 @@
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BGR_Toplevel.sch
+**.subckt BGR_Toplevel Vfinal VDD VSS VBGR1 IBIAS IBIAS2
+*.opin Vfinal
+*.iopin VDD
+*.iopin VSS
+*.iopin VBGR1
+*.iopin IBIAS
+*.iopin IBIAS2
+x7 VDD VSS V_first net1 BGR_2nd_parta
+x8 VDD VSS net5 V_first IBIAS Vfinal BGR_2ndc
+x9 VDD VSS V1 net1 net5 BGR_2nd_partb_Mubashir
+x10 net3 VSS net4 V1 BJTs
+x11 VDD net2 V1 V_first VSS net4 CTAT
+x12 VDD net2 V1 net3 VSS PTAT
+x1 VDD VSS V_first VBGR1 VBGR1 IBIAS2 Opamp_Jaffar_withBlocks
+**.ends
+
+* expanding   symbol:  BGR_2nd_parta.sym # of pins=4
+** sym_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BGR_2nd_parta.sym
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BGR_2nd_parta.sch
+.subckt BGR_2nd_parta  VDD VSS V_first V4
+*.iopin VDD
+*.iopin VSS
+*.iopin V_first
+*.iopin V4
+XQ16 VSS VSS net4 sky130_fd_pr__pnp_05v5_W3p40L3p40
+XM30 V4 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=24 nf=3 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM31 net1 V_first VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM32 net1 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XR6 net2 V4 VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+XR7 net3 net2 VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+XR9 net4 net3 VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+XR1 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+XR2 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=10.5 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  BGR_2ndc.sym # of pins=6
+** sym_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BGR_2ndc.sym
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BGR_2ndc.sch
+.subckt BGR_2ndc  VDD VSS VNL V_first IBIAS Vfinal
+*.opin Vfinal
+*.iopin VNL
+*.iopin V_first
+*.iopin IBIAS
+*.iopin VSS
+*.iopin VDD
+XR3 Vfinal net1 VSS sky130_fd_pr__res_high_po_0p35 L=3.2 mult=1 m=1
+XR4 net1 net2 VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR5 net2 net3 VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR12 net3 net4 VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR13 net4 net5 VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR14 net5 VNL VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR1 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR2 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR6 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=3.2 mult=1 m=1
+XR7 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=3.2 mult=1 m=1
+x1 VDD VSS V_first net1 Vfinal IBIAS Opamp_Jaffar_withBlocks
+.ends
+
+
+* expanding   symbol:  BGR_2nd_partb_Mubashir.sym # of pins=5
+** sym_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BGR_2nd_partb_Mubashir.sym
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BGR_2nd_partb_Mubashir.sch
+.subckt BGR_2nd_partb_Mubashir  VDD VSS V1 V4 VNL
+*.iopin VDD
+*.iopin VSS
+*.iopin V1
+*.iopin V4
+*.iopin VNL
+XM9 net3 V4 net2 VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=20 nf=4 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM10 net1 V1 net2 VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM11 net1 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM12 VNL net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=20 nf=4 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM58 net2 VDD VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=20 nf=4 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XR11 net3 VNL VSS sky130_fd_pr__res_high_po_0p35 L=47 mult=1 m=1
+XR1 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=47 mult=1 m=1
+XR2 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=47 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  BJTs.sym # of pins=4
+** sym_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BJTs.sym
+** sch_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BJTs.sch
+.subckt BJTs  BJT VSS BJT1 V1
+*.iopin VSS
+*.iopin BJT
+*.iopin BJT1
+*.iopin V1
+XQ10 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ11 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ13 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ14 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ15 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ12 VSS VSS BJT1 sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ9 VSS VSS V1 sky130_fd_pr__pnp_05v5_W3p40L3p40
+.ends
+
+
+* expanding   symbol:  CTAT.sym # of pins=6
+** sym_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/CTAT.sym
+** sch_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/CTAT.sch
+.subckt CTAT  VDD PTAT V1 V_first VSS BJT1
+*.iopin VDD
+*.iopin PTAT
+*.iopin V1
+*.iopin BJT1
+*.iopin V_first
+*.iopin VSS
+XM27 net1 PTAT VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM28 V_first V1 net1 VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=30 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XR2 net2 V_first VSS sky130_fd_pr__res_high_po_0p35 L=44.43 mult=1 m=1
+XR1 BJT1 net2 VSS sky130_fd_pr__res_high_po_0p35 L=44.43 mult=1 m=1
+XR3 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=44.43 mult=1 m=1
+XR4 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=44.43 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  PTAT.sym # of pins=5
+** sym_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/PTAT.sym
+** sch_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/PTAT.sch
+.subckt PTAT  VDD PTAT V1 BJT VSS
+*.iopin VDD
+*.iopin PTAT
+*.iopin V1
+*.iopin BJT
+*.iopin VSS
+XM22 PTAT net3 net4 VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM23 net3 net3 V1 VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM24 net1 PTAT VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM25 net3 net4 net1 VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=30 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM26 net2 PTAT VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM29 PTAT V1 net2 VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=30 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XR1 BJT net4 VSS sky130_fd_pr__res_high_po_0p35 L=8 mult=1 m=1
+XR2 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=8 mult=1 m=1
+XR3 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=8 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  Opamp_Jaffar_withBlocks.sym # of pins=6
+** sym_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/Opamp_Jaffar_withBlocks.sym
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/Opamp_Jaffar_withBlocks.sch
+.subckt Opamp_Jaffar_withBlocks  VDD VSS VP VN VO IBIAS
+*.iopin VDD
+*.iopin VSS
+*.iopin VP
+*.iopin VN
+*.iopin VO
+*.iopin IBIAS
+x1 VSS VO IBIAS net1 Current_mirror_jaffar
+x2 VDD VSS VP VN net1 VO Diff_Opamp_jaffar
+.ends
+
+
+* expanding   symbol:  Current_mirror_jaffar.sym # of pins=4
+** sym_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/Current_mirror_jaffar.sym
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/Current_mirror_jaffar.sch
+.subckt Current_mirror_jaffar  VSS VO IBIAS SO
+*.iopin VSS
+*.iopin VO
+*.iopin IBIAS
+*.iopin SO
+XM2 SO IBIAS net1 VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=50 nf=10 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 VO IBIAS net3 VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=100 nf=20 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 IBIAS IBIAS net2 VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 net1 net2 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=50 nf=5 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net2 net2 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM8 net3 net2 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=100 nf=10 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  Diff_Opamp_jaffar.sym # of pins=6
+** sym_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/Diff_Opamp_jaffar.sym
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/Diff_Opamp_jaffar.sch
+.subckt Diff_Opamp_jaffar  VDD VSS VP VN SO VO
+*.iopin VDD
+*.iopin VSS
+*.iopin VP
+*.iopin VN
+*.iopin SO
+*.iopin VO
+XM30 net2 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM32 net1 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM31 net1 VN SO VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=50 nf=5 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM1 net2 VP SO VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=50 nf=5 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XC1 net3 VO sky130_fd_pr__cap_mim_m3_1 W=24 L=24 MF=1 m=1
+XM6 VO net2 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=100 nf=10 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XR1 net3 net2 VSS sky130_fd_pr__res_high_po_0p35 L=8 mult=1 m=1
+.ends
+
+.end

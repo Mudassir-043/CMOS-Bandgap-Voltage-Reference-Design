@@ -1,0 +1,15 @@
+** sch_path: /home/shahid/Desktop/EDA/test_BGR/xschem_BGR/BJTs.sch
+**.subckt BJTs VSS BJT BJT1 BJT2
+*.iopin VSS
+*.iopin BJT
+*.iopin BJT1
+*.iopin BJT2
+XQ10 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ11 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ13 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ14 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ15 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ12 VSS VSS BJT1 sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ9 VSS VSS BJT2 sky130_fd_pr__pnp_05v5_W3p40L3p40
+**.ends
+.end

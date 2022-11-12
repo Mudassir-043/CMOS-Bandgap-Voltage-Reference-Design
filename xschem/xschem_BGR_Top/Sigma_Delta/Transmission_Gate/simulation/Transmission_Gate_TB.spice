@@ -1,0 +1,57 @@
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test/xschem/Sigma_Delta/Transmission_Gate/Transmission_Gate_TB.sch
+**.subckt Transmission_Gate_TB
+V3 VINN GND 0.9
+V4 CLK GND pulse (0 1.8 0 0.5n 0.5n 2n 5n 0)
+XTG1 GND CLK net1 VINN VOUT TG
+V1 net1 GND 0.9
+**** begin user architecture code
+
+
+.control
+tran 0.2n 20n
+*plot v(VIN)
+plot v(VOUT)
+*plot v(CLK) v(VINP) v(VOUTP)
+*plot v(CLK) v(VINP)
+* star for commenting
+.endc
+
+
+** opencircuitdesign pdks install
+.lib /home/shahid/OSPDKs/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+
+
+
+.ac dec 20 1 1e12
+.save all
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  Sigma_Delta/Transmission_Gate/TG.sym # of pins=5
+** sym_path: /home/shahid/Desktop/EDA/test/xschem/Sigma_Delta/Transmission_Gate/TG.sym
+** sch_path: /home/shahid/Desktop/EDA/test/xschem/Sigma_Delta/Transmission_Gate/TG.sch
+.subckt TG  VSS CLK VDD A B
+*.iopin VDD
+*.iopin VSS
+*.iopin A
+*.iopin B
+*.iopin CLK
+XM1 A CLK B VSS sky130_fd_pr__nfet_01v8 L=0.15 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 B CLKB A VDD sky130_fd_pr__pfet_01v8 L=0.15 W=20 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 CLKB CLK VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=10 nf=5 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 CLKB CLK VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=20 nf=10 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end

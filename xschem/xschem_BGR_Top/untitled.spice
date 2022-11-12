@@ -1,0 +1,21 @@
+** sch_path: /home/shahid/Desktop/EDA/test/xschem BGR/untitled.sch
+**.subckt untitled Vfinal VNL V VSS
+*.opin Vfinal
+*.iopin VNL
+*.iopin V
+*.iopin VSS
+XR8 V VP VSS sky130_fd_pr__res_high_po_0p35 L=0.35 mult=1 m=1
+XR3 Vfinal VNF VSS sky130_fd_pr__res_high_po_0p35 L=7 mult=1 m=1
+XR4 VN net1 VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR5 net1 net2 VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR12 net2 net3 VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR13 net3 net4 VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR14 net4 VNL VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR1 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR2 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=30 mult=1 m=1
+XR6 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=0.35 mult=1 m=1
+XR7 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=0.35 mult=1 m=1
+XR9 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=7 mult=1 m=1
+XR10 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=7 mult=1 m=1
+**.ends
+.end

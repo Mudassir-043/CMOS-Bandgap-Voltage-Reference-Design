@@ -1,0 +1,48 @@
+v {xschem version=3.0.0 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=XCOMP1"}
+V {}
+S {type=subcircuit
+format="@name @pinlist @symname"
+template="name=X1"}
+E {}
+L 4 15 -40 15 5 {}
+L 4 5 -30 15 -30 {}
+L 4 5 -5 15 -5 {}
+L 4 40 -5 50 -5 {}
+L 4 15 5 70 -20 {}
+L 4 15 -40 70 -20 {}
+L 4 15 15 20 15 {}
+L 4 20 5 20 15 {}
+L 4 35 15 40 15 {}
+L 4 30 -45 40 -45 {}
+L 4 30 -45 30 -35 {}
+L 4 20 3 20 5 {}
+L 4 37 -5 40 -5 {}
+L 4 37 -32 48 -32 {}
+L 4 35 -4 35 15 {}
+B 5 2.5 -32.5 7.5 -27.5 {name=VINN
+dir=inout}
+B 5 2.5 -7.5 7.5 -2.5 {name=VINP
+dir=inout}
+B 5 47.5 -34.5 52.5 -29.5 {name=VOUTN
+dir=inout}
+B 5 47.5 -7.5 52.5 -2.5 {name=VOUTP
+dir=inout}
+B 5 37.5 -47.5 42.5 -42.5 {name=CLK
+dir=inout}
+B 5 12.5 12.5 17.5 17.5 {name=VDD
+dir=inout}
+B 5 37.5 12.5 42.5 17.5 {name=VSS
+dir=inout}
+T {Comparator} 16 -24 0 0 0.15 0.15 {}
+T {VINN} 0 -40 0 0 0.1 0.1 {}
+T {VINP} 0 -15 0 0 0.1 0.1 {}
+T {VOUTN} 47 -40 0 0 0.1 0.1 {}
+T {VOUTP} 47 -1 0 0 0.1 0.1 {}
+T {VSS} 37 6 0 0 0.1 0.1 {}
+T {VDD} 6 5 0 0 0.1 0.1 {}
+T {CLK} 26 -53 0 0 0.1 0.1 {}
+T {@name} 22 -14 0 0 0.1 0.1 {}

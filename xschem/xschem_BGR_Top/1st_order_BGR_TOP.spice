@@ -1,0 +1,85 @@
+** sch_path:
+*+ /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/1st_order_BGR_TOP.sch
+**.subckt 1st_order_BGR_TOP VDD VSS V
+*.iopin VDD
+*.iopin VSS
+*.iopin V
+x1 net2 VSS net3 BJT2 BJTs
+x2 VDD net1 BJT2 V VSS net3 CTAT
+x3 VDD net1 BJT2 net2 VSS PTAT
+**.ends
+
+* expanding   symbol:  BJTs.sym # of pins=4
+** sym_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BJTs.sym
+** sch_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/BJTs.sch
+.subckt BJTs  BJT VSS BJT1 V1
+*.iopin VSS
+*.iopin BJT
+*.iopin BJT1
+*.iopin V1
+XQ10 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ11 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ13 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ14 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ15 VSS VSS BJT sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ12 VSS VSS BJT1 sky130_fd_pr__pnp_05v5_W3p40L3p40
+XQ9 VSS VSS V1 sky130_fd_pr__pnp_05v5_W3p40L3p40
+.ends
+
+
+* expanding   symbol:  CTAT.sym # of pins=6
+** sym_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/CTAT.sym
+** sch_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/CTAT.sch
+.subckt CTAT  VDD PTAT V1 V_first VSS BJT1
+*.iopin VDD
+*.iopin PTAT
+*.iopin V1
+*.iopin BJT1
+*.iopin V_first
+*.iopin VSS
+XM27 net1 PTAT VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM28 V_first V1 net1 VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=30 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XR2 net2 V_first VSS sky130_fd_pr__res_high_po_0p35 L=44.43 mult=1 m=1
+XR1 BJT1 net2 VSS sky130_fd_pr__res_high_po_0p35 L=44.43 mult=1 m=1
+XR3 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=44.43 mult=1 m=1
+XR4 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=44.43 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  PTAT.sym # of pins=5
+** sym_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/PTAT.sym
+** sch_path: /home/shahid/Desktop/EDA/test_BGR/BGR_TopLayout_GDSandTESTING/xschem_BGR_Top/PTAT.sch
+.subckt PTAT  VDD PTAT V1 BJT VSS
+*.iopin VDD
+*.iopin PTAT
+*.iopin V1
+*.iopin BJT
+*.iopin VSS
+XM22 PTAT net3 net4 VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM23 net3 net3 V1 VSS sky130_fd_pr__nfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM24 net1 PTAT VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM25 net3 net4 net1 VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=30 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM26 net2 PTAT VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM29 PTAT V1 net2 VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=30 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XR1 BJT net4 VSS sky130_fd_pr__res_high_po_0p35 L=8 mult=1 m=1
+XR2 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=8 mult=1 m=1
+XR3 VSS VSS VSS sky130_fd_pr__res_high_po_0p35 L=8 mult=1 m=1
+.ends
+
+.end

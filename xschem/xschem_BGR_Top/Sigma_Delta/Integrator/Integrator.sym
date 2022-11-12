@@ -1,0 +1,43 @@
+v {xschem version=3.0.0 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=XINT1"}
+V {}
+S {}
+E {}
+L 4 30 -25 40 -25 {}
+L 4 105 -20 110 -20 {}
+L 4 40 -40 40 -0 {}
+L 4 40 -0 100 0 {}
+L 4 100 -40 100 0 {}
+L 4 40 -40 100 -40 {}
+L 4 100 -20 105 -20 {}
+L 4 70 0 70 8 {}
+L 4 50 -50 50 -40 {}
+L 4 30 -15 40 -15 {}
+L 4 90 -50 90 -40 {}
+L 4 70 -50 70 -40 {}
+B 5 67.5 5.5 72.5 10.5 {name=VREF
+dir=inout}
+B 5 27.5 -17.5 32.5 -12.5 {name=CLK
+dir=inout}
+B 5 27.5 -27.5 32.5 -22.5 {name=VIN
+dir=inout}
+B 5 107.5 -22.5 112.5 -17.5 {name=VO
+dir=inout}
+B 5 47.5 -52.5 52.5 -47.5 {name=VDD
+dir=inout}
+B 5 87.5 -52.5 92.5 -47.5 {name=VSS
+dir=inout}
+B 5 67.5 -52.5 72.5 -47.5 {name=IBIAS
+dir=inout}
+T {Integrator} 51 -29 0 0 0.15 0.15 {}
+T {VDD} 43 -47 0 0 0.05 0.05 {}
+T {CLK} 33 -14 0 0 0.05 0.05 {}
+T {VSS} 83 -47 0 0 0.05 0.05 {}
+T {VIN} 33 -24 0 0 0.05 0.05 {}
+T {VO} 101 -27 0 0 0.05 0.05 {}
+T {VREF} 63 2 0 0 0.05 0.05 {}
+T {IBIAS} 64 -47 0 0 0.05 0.05 {}
+T {@name} 51 -19 0 0 0.15 0.15 {}
